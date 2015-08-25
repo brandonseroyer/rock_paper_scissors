@@ -8,8 +8,8 @@ get('/') do
 end
 
 get('/winner') do
-  @player1 = params.fetch('player1').beats?()
-  @player2 = params.fetch('player2').beats?()
-  @winner = @player1.beats?(@player1)
+  @player1 = params.fetch('player1')
+  @player2 = params.fetch('player2')
+  @winner = @player1.beats?(@player2)
   erb(:winner)
 end
